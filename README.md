@@ -56,6 +56,11 @@ http://<your-ec2-public-ip>
 http://34.221.45.133
 ```
 
+## Test your phasenet API
+```bash
+#Run example_fastapi.ipynb
+python example_phasenet_run.py
+```
 
 ## References
 Zhu, W., and Beroza, G. C., 2018. PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method. Geophysical Journal International. DOI: 10.1093/gji/ggy423
