@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  phasenet-service:
+    build:
+      context: .
+    image: phasenettest
+    ports:
+      - "0.0.0.0:7860:7860"
+    volumes:
+      - .:/app
+    restart: always

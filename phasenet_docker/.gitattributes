@@ -1,0 +1,6 @@
+model/190703-214543/loss.log filter=lfs diff=lfs merge=lfs -text
+model/190703-214543/model_95.ckpt.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+model/190703-214543/model_95.ckpt.index filter=lfs diff=lfs merge=lfs -text
+model/190703-214543/model_95.ckpt.meta filter=lfs diff=lfs merge=lfs -text
+model/190703-214543/checkpoint filter=lfs diff=lfs merge=lfs -text
+model/190703-214543/config.log filter=lfs diff=lfs merge=lfs -text
