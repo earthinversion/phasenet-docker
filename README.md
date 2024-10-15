@@ -26,9 +26,16 @@ sudo usermod -aG docker $USER
 ## Log out and log back in
 
 git clone https://github.com/earthinversion/phasenet-docker.git
+cd phasenet-docker
 
+## Run using docker
 docker build -t phasenet-server .
 docker run -d -p 80:7860 --name phasenet-server phasenet-server
+
+## Run using docker compose
+docker-compose build
+docker-compose up -d
+
 ```
 
 
