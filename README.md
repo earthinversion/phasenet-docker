@@ -1,5 +1,6 @@
+# Running PhaseNet on AWS EC2 Instance
 
-## Local machine
+## Connect to EC2 instance using SSH
 ```
 chmod 400 eqw_phasenet.pem
 ssh -i "eqw_phasenet.pem" ec2-user@ec2-34-221-45-133.us-west-2.compute.amazonaws.com
@@ -8,7 +9,6 @@ ssh -i "eqw_phasenet.pem" ec2-user@ec2-34-221-45-133.us-west-2.compute.amazonaws
 
 ## Remote machine
 
-### Using docker
 ```bash
 sudo yum install git
 
@@ -30,13 +30,6 @@ docker build -t phasenet-server .
 docker run -d -p 7860:7860 --name phasenet-server phasenet-server
 ```
 
-### Using docker-compose
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
-
-```
 
 ## Troubleshooting
 ```bash
