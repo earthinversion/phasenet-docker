@@ -28,7 +28,7 @@ sudo usermod -aG docker $USER
 git clone https://github.com/earthinversion/phasenet-docker.git
 
 docker build -t phasenet-server .
-docker run -d -p 7860:7860 --name phasenet-server phasenet-server
+docker run -d -p 80:7860 --name phasenet-server phasenet-server
 ```
 
 
