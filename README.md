@@ -57,5 +57,7 @@ uvicorn --app-dir eqnet app:app --reload --host 0.0.0.0 --port 7860
 ```
 
 ## Application
+```
 http://<your-ec2-public-ip>
 http://34.221.45.133
+```
