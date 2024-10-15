@@ -1,4 +1,5 @@
 # Running PhaseNet on AWS EC2 Instance
+- Original Code: https://github.com/AI4EPS/PhaseNet.git 
 
 ## Connect to EC2 instance using SSH
 ```
@@ -54,3 +55,7 @@ uvicorn --app-dir eqnet app:app --reload --host 0.0.0.0 --port 7860
 http://<your-ec2-public-ip>
 http://34.221.45.133
 ```
+
+
+## References
+Zhu, W., and Beroza, G. C., 2018. PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method. Geophysical Journal International. DOI: 10.1093/gji/ggy423
