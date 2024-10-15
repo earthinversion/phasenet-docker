@@ -6,7 +6,7 @@ services:
       context: .
     image: phasenettest
     ports:
-      - "0.0.0.0:7860:7860"
+      - "0.0.0.0:80:7860"
     volumes:
       - .:/app
     restart: always

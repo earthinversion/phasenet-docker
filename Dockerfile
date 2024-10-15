@@ -10,11 +10,7 @@ RUN apt-get update && apt-get install -y \
     libatlas-base-dev \
     pkg-config \
     wget \
-    git \  
     && rm -rf /var/lib/apt/lists/*
-
-# Install PyTorch and torchvision
-RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 # Create a new user and switch to that user
 RUN useradd -m -u 1000 user
@@ -24,18 +20,15 @@ ENV PATH="/home/user/.local/bin:$PATH"
 # Set the working directory
 WORKDIR /app
 
-# Clone the EQNet repository from GitHub
-RUN git clone https://github.com/AI4EPS/PhaseNet.git /app/EQNet
-
-# Change the working directory to the cloned repository
-WORKDIR /app/EQNet
-
-# Install the Python dependencies listed in the requirements file
-COPY --chown=user ./requirements.txt /app/EQNet/requirements.txt
+# Copy the requirements file and install Python dependencies
+COPY --chown=user ./requirements.txt requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Download the model, extract it, and clean up
 RUN wget https://github.com/AI4EPS/models/releases/download/PhaseNet-2018/model.tar && tar -xvf model.tar && rm model.tar
 
-# Set the entry point to run the application using Uvicorn
-ENTRYPOINT ["uvicorn", "--app-dir", "phasenet", "app:app", "--reload", "--host", "0.0.0.0", "--port", "7860"]
+# Copy the application code into the container
+COPY --chown=user . /app
+
+# Set the entry point for running the application
+ENTRYPOINT ["uvicorn", "--app-dir", "phasenet", "app:app", "--reload","--host", "0.0.0.0",  "--port", "7860"]

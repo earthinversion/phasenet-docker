@@ -7,4 +7,4 @@ scipy
 obspy
 uvicorn
 fastapi
-kafka-python
+tensorflow-cpu
