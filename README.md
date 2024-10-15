@@ -57,14 +57,5 @@ uvicorn --app-dir eqnet app:app --reload --host 0.0.0.0 --port 7860
 ```
 
 ## Application
-http://<your-ec2-public-ip>:7860
+http://<your-ec2-public-ip>
 http://34.221.45.133
-http://34.221.45.133/healthz
-
-
-curl -X POST http://34.221.45.133/predict -H "Content-Type: application/json" -d '{
-  "id": ["station_1"],
-  "timestamp": ["2024-10-14T12:00:00Z"],
-  "vec": [[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]]],
-  "dt_s": 0.01
-}'
