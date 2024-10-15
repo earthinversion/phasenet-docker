@@ -1,3 +1,5 @@
 eqw_phasenet.pem
-phasenet_docker/model
+model
+*.{psd,zip,tar,gz}
+
 *.{psd,zip,tar,gz}
